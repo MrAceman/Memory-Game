@@ -26,6 +26,20 @@ describe('About our game', function() {
             expect(game).to.be.an.instanceof(Game);
         });
     });
+
+    describe('Things the game should setup', function() {
+
+        it('should have an array of numbers', function() {
+            expect(game.deck).to.be.an('array');
+        });
+        it('should have a number to store the current card', function() {
+            expect(game.valCard).to.be.a('number');
+        });
+        it('should have a number to store the previous card', function() {
+            expect(game.previousCard).to.be.a('number');
+        });
+    });
+
 })
 
 describe('Stuff about the score', function(){
