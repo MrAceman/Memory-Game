@@ -54,12 +54,6 @@ describe('Stuff about the card', function() {
             expect(card).to.be.an.instanceof(Card);
         });
     });
-
-    describe('State of card', function(){
-      it('should be facedown when created', function(){
-        expect(card.state).to.equal(0);
-      });
-    })
 })
 
 describe('Info about the timer', function(){

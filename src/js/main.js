@@ -10,27 +10,39 @@ import {Timer} from './classes/timer.js';
 // Initialize game
 
 let newGame = new Game();
-// var canvas = document.getElementById('memory');
-// var ctx = canvas.getContext('2d');
-//
-// function draw() {
-//   var canvas = document.getElementById('canvas');
-//   if (canvas.getContext){
-//     var ctx = canvas.getContext('2d');
-//
-//     // Cubic curves example
-//     ctx.beginPath();
-//     ctx.moveTo(75,40);
-//     ctx.bezierCurveTo(75,37,70,25,50,25);
-//     ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
-//     ctx.bezierCurveTo(20,80,40,102,75,120);
-//     ctx.bezierCurveTo(110,102,130,80,130,62.5);
-//     ctx.bezierCurveTo(130,62.5,130,25,100,25);
-//     ctx.bezierCurveTo(85,25,75,37,75,40);
-//     ctx.fill();
-//   }
-// }
+let deck = [];
 
+// *********************
 
-// Setup game
-newGame.setup()
+newGame.setup();
+
+function checkMatches(){
+  console.log(newGame.valCard);
+  console.log(newGame.previousCard);
+  if (newGame.valCard === newGame.previousCard){
+    console.log("Good match");
+    // This resets the current card to zero so
+    // that it will reset the previousCard to
+    // zero later in this function
+    newGame.valCard = 0;
+    console.log(newGame.previousCard);
+  }
+  else {
+    $(this).addClass('facedown');
+  }
+    newGame.previousCard = newGame.valCard;
+}
+
+var changeCardState = function(e) {
+  event.preventDefault();
+  let thisCard = e.currentTarget;
+  let thisCardClass = e.currentTarget.className;
+
+  if (thisCardClass.indexOf('facedown')){
+    $(this).removeClass('facedown');
+  };
+  newGame.valCard = e.currentTarget.innerHTML;
+  checkMatches(newGame.valCard);
+}
+
+$('.card').on('click', changeCardState);

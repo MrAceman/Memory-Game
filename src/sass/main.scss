@@ -1,0 +1,48 @@
+.container{
+  width:100vw;
+}
+
+.boardContainer{
+  margin:5px;
+  padding:5px;
+  width:1000px;
+  // max-width: 1000px;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.cardsList{
+  margin:5px;
+  padding:5px;
+}
+
+.card{
+  list-style: none;
+
+  display: -webkit-inline-flex;
+  display: inline-flex;
+
+  -webkit-flex-direction: row;
+  flex-direction: row;
+
+  -webkit-align-items: center;
+  align-items: center;
+
+  -webkit-justify-content: center;
+  justify-content: center;
+  width:175px;
+  height:175px;
+  max-width: 175px;
+  border: 2px solid black;
+  margin:2px;
+  text-align: center;
+}
+
+.card.facedown {
+  // background-image: url(../images/TIYlogo.jpg);
+  font-size:0;
+  background-size: contain;
+  backface-visibility: visible;
+    background-color: #000000;
+    border-radius: 0px;
+}
