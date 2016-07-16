@@ -22,6 +22,7 @@ function checkMatches(){
     removeMatches();
     newGame.valCard = 0;
     newGame.checkWin();
+    newGame.previousCard = newGame.valCard;
   }
   else if (newGame.previousCard === 0){
     newGame.previousCard = newGame.valCard;
@@ -30,29 +31,42 @@ function checkMatches(){
   }
   else {
     newGame.valCard = 0;
-    setTimeout(coverCards, 1500)
-  }
+    // $('.card').off();
+    setTimeout(coverCards, 1500);
     newGame.previousCard = newGame.valCard;
+    return;
+  }
+    // newGame.previousCard = newGame.valCard;
 }
 
 function removeMatches(){
   console.log(newGame.deck);
   for (var i = newGame.deck.length; i--;){
-     if (newGame.deck[i] === Number(newGame.valCard)) newGame.deck.splice(i, 1);
+    console.log(newGame.deck[i]);
+    console.log(newGame.valCard);
+     if (newGame.deck[i] == newGame.valCard) newGame.deck.splice(i, 1);
      newGame.deck = newGame.deck;
    };
    console.log(newGame.deck);
  }
 
+ // function removeMatches(){
+ //   console.log(newGame.deck);
+ //   for (var i = newGame.deck.length; i--;){
+ //      if (newGame.deck[i] === Number(newGame.valCard)) newGame.deck.splice(i, 1);
+ //      newGame.deck = newGame.deck;
+ //    };
+ //    console.log(newGame.deck);
+ //  }
+
 function coverCards(){
-  var allCards = $('.card');
-  let i, o; //Counters for both array loops
   $(newGame.cardTarget).addClass('facedown');
   $(newGame.prevCardTarget).addClass('facedown');
 }
 
 var changeCardState = function(e) {
   event.preventDefault();
+  console.log('Clicked the button!');
   let thisCard = e.currentTarget;
   let thisCardClass = e.currentTarget.className;
   newGame.cardTarget = e.currentTarget;
@@ -64,4 +78,5 @@ var changeCardState = function(e) {
   checkMatches(newGame.valCard);
 }
 
+// $('.card').one('click', changeCardState); //ONE allows for just one click of each card.  Does NOT reset.
 $('.card').on('click', changeCardState);
