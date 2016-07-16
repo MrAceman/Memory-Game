@@ -33,9 +33,10 @@
   height:175px;
   max-width: 175px;
   border: 2px solid black;
-  margin:2px;
+  border-radius: 20px;
+  margin:5px;
   text-align: center;
-  font-size:2em;
+  font-size:3em;
   padding:0;
 }
 
@@ -43,11 +44,10 @@
 
 .card.facedown {
   background-image: url(../images/TIYlogo.jpg);
-  // font-size:0;
   background-size: contain;
-  background-color: #000000;
-  border-radius: 0px;
-  img{
-    display:none;
-  }
+  // background-color: #000000;
+  font-size:0;
+  // img{
+  //   display:none;
+  // }
 }
