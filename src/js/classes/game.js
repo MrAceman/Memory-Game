@@ -6,6 +6,8 @@ class Game{
     this.deck = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
     this.previousCard = 0;
     this.valCard = 0;
+    this.cardTarget;
+    this.prevCardTarget;
   }
 
   shuffleDeck() {
@@ -34,6 +36,15 @@ class Game{
   setup(){
     let shuffledDeck = this.shuffleDeck();
     this.dealDeck(shuffledDeck);
+  }
+
+  checkWin(){
+    if (this.deck.length > 0){
+      return;
+    }
+    else {
+      alert("YOU WIN!");
+    }
   }
 }
 
