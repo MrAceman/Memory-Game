@@ -9,6 +9,7 @@ class Game{
   }
 
   shuffleDeck() {
+    // console.log(this.deck);
       let deck = this.deck;
       let i, randCard, x;
       for (i = deck.length; i; i--) {
@@ -17,6 +18,7 @@ class Game{
           deck[i - 1] = deck[randCard];
           deck[randCard] = x;
       }
+          // console.log(this.deck);
       return(deck);
   }
 
@@ -25,7 +27,7 @@ class Game{
       let i, card, x;
       let d = shuffledDeck;
       for (i = d.length; i; i--) {
-        node.append(`<li class="card facedown">${d[i-1]}</li>`);
+        node.append(`<li class="card facedown" id="${i}">${d[i-1]}</li>`);
       }
     }
 

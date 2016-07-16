@@ -52,6 +52,9 @@ describe('Stuff about the score', function(){
       it('should be a number', function() {
           expect(score.currentScore).to.be.a('number');
       });
+      it('should be a number equal to zero', function() {
+          expect(score.currentScore).to.be.equal(0);
+      });
   });
 })
 
