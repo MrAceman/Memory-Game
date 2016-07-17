@@ -70,7 +70,7 @@ var flipCards = function(e) {
 
 function updateTimer() {
   timer.timerVal ++;
-  $('.timer').html(`Timer:${timer.timerVal}`);
+  $('.timer').html(`Timer</br>${timer.timerVal}`);
 };
 
 function startTimer() {

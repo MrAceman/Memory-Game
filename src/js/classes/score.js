@@ -9,11 +9,11 @@ class Score{
 
   updateGuess(){
     this.currentGuess ++;
-    $('.guess').html(`Guesses:${this.currentGuess}`);
+    $('.guess').html(`Guesses</br>${this.currentGuess}`);
   }
 
   checkWin(){
-    $('.score').html(`Score:${this.currentScore}`);
+    $('.score').html(`Score</br>${this.currentScore}`);
     if (this.currentScore >= 10){
       alert("YOU WIN!");
       window.clearInterval(interval);
