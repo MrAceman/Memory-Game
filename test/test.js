@@ -7,6 +7,7 @@ import {Game} from '../src/js/classes/game.js';
 import {Card} from '../src/js/classes/card.js';
 import {Score} from '../src/js/classes/score.js';
 import {Timer} from '../src/js/classes/timer.js';
+import $ from 'jquery';
 
 // Set Chai Constants
 const expect = chai.expect;
@@ -84,8 +85,8 @@ describe('Info about the timer', function(){
 
       it('should be a number with a value of 0', function() {
           let timer = new Timer();
-          expect(timer.value).to.be.a('number');
-          expect(timer.value).to.equal(0);
+          expect(timer.timerVal).to.be.a('number');
+          expect(timer.timerVal).to.equal(0);
       });
 
   });
