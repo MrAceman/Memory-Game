@@ -12,6 +12,7 @@ import {Timer} from './classes/timer.js';
 let game = new Game();
 let score = new Score();
 let timer = new Timer();
+let currentTimer = 0;
 let deck = [];
 
 // *********************
@@ -25,6 +26,8 @@ function checkMatches(){
     score.currentScore ++;
     score.updateGuess();
     score.checkWin();
+    if(score.checkWin === true)
+    {window.clearInterval(currentTimer)}
   }
   else if (game.previousCard === 0){
     game.prevCardTarget = game.cardTarget;
@@ -65,6 +68,15 @@ var flipCards = function(e) {
   checkMatches();
 }
 
+function updateTimer() {
+  timer.timerVal ++;
+  $('.timer').html(`Timer:${timer.timerVal}`);
+};
+
+function startTimer() {
+  window.interval = setInterval(updateTimer, 1000);
+};
+
 // $('.card').one('click', flipCards); //ONE allows for just one click of each card.  Does NOT reset.
 $('.card').on('click', flipCards);
-$('.container').one('click', timer.startTimer);
+$('.container').one('click', startTimer);

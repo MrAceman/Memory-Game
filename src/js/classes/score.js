@@ -16,6 +16,7 @@ class Score{
     $('.score').html(`Score:${this.currentScore}`);
     if (this.currentScore >= 10){
       alert("YOU WIN!");
+      window.clearInterval(interval);
     }
     else{};
   };

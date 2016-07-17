@@ -3,6 +3,7 @@ import $ from 'jquery';
 class Timer{
   constructor(){
     this.timerVal = 0;
+    // this.currentTimer = 0;
   }
 
   // var __nativeSI__ = window.setInterval;
