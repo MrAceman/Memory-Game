@@ -10,6 +10,7 @@ import {Timer} from './classes/timer.js';
 // Initialize game
 
 let newGame = new Game();
+let score = new Score();
 let deck = [];
 
 // *********************
@@ -17,37 +18,41 @@ let deck = [];
 newGame.setup();
 
 function checkMatches(){
-
   if (newGame.valCard === newGame.previousCard){
+    console.log("Check1");
     removeMatches();
     newGame.valCard = 0;
-    newGame.checkWin();
-    newGame.previousCard = newGame.valCard;
+    console.log(score.currentScore);
+    score.currentScore ++;
+    console.log(score.currentScore);
+    score.checkWin();
+    // newGame.previousCard = newGame.valCard;
   }
   else if (newGame.previousCard === 0){
-    newGame.previousCard = newGame.valCard;
+    console.log("Check2");
     newGame.prevCardTarget = newGame.cardTarget;
-    return;
+    newGame.previousCard = newGame.valCard;
+    // return;
   }
   else {
     newGame.valCard = 0;
+    console.log("Check3");
     // $('.card').off();
     setTimeout(coverCards, 1500);
-    newGame.previousCard = newGame.valCard;
-    return;
-  }
     // newGame.previousCard = newGame.valCard;
+    // return;
+  }
+    newGame.previousCard = newGame.valCard;
+    // e.click = e._click;
+    // e._click = null;
+
 }
 
 function removeMatches(){
-  console.log(newGame.deck);
   for (var i = newGame.deck.length; i--;){
-    console.log(newGame.deck[i]);
-    console.log(newGame.valCard);
      if (newGame.deck[i] == newGame.valCard) newGame.deck.splice(i, 1);
      newGame.deck = newGame.deck;
    };
-   console.log(newGame.deck);
  }
 
  // function removeMatches(){
@@ -62,11 +67,14 @@ function removeMatches(){
 function coverCards(){
   $(newGame.cardTarget).addClass('facedown');
   $(newGame.prevCardTarget).addClass('facedown');
+  // e.click = e._click;
+  // e._click = null;
+
 }
 
 var changeCardState = function(e) {
   event.preventDefault();
-  console.log('Clicked the button!');
+  console.log('Change card start');
   let thisCard = e.currentTarget;
   let thisCardClass = e.currentTarget.className;
   newGame.cardTarget = e.currentTarget;
@@ -75,7 +83,7 @@ var changeCardState = function(e) {
     $(this).removeClass('facedown');
   };
   newGame.valCard = e.currentTarget.innerHTML;
-  checkMatches(newGame.valCard);
+  checkMatches();
 }
 
 // $('.card').one('click', changeCardState); //ONE allows for just one click of each card.  Does NOT reset.
