@@ -9,82 +9,62 @@ import {Timer} from './classes/timer.js';
 
 // Initialize game
 
-let newGame = new Game();
+let game = new Game();
 let score = new Score();
+let timer = new Timer();
 let deck = [];
 
 // *********************
 
-newGame.setup();
+game.setup();
 
 function checkMatches(){
-  if (newGame.valCard === newGame.previousCard){
-    console.log("Check1");
-    removeMatches();
-    newGame.valCard = 0;
-    console.log(score.currentScore);
+  if (game.valCard === game.previousCard){
+    // removeMatches();
+    game.valCard = 0;
     score.currentScore ++;
-    console.log(score.currentScore);
+    score.updateGuess();
     score.checkWin();
-    // newGame.previousCard = newGame.valCard;
   }
-  else if (newGame.previousCard === 0){
-    console.log("Check2");
-    newGame.prevCardTarget = newGame.cardTarget;
-    newGame.previousCard = newGame.valCard;
-    // return;
+  else if (game.previousCard === 0){
+    game.prevCardTarget = game.cardTarget;
+    game.previousCard = game.valCard;
   }
   else {
-    newGame.valCard = 0;
-    console.log("Check3");
-    // $('.card').off();
+    game.valCard = 0;
+    score.updateGuess();
     setTimeout(coverCards, 1500);
-    // newGame.previousCard = newGame.valCard;
-    // return;
   }
-    newGame.previousCard = newGame.valCard;
-    // e.click = e._click;
-    // e._click = null;
-
+    game.previousCard = game.valCard;
 }
 
-function removeMatches(){
-  for (var i = newGame.deck.length; i--;){
-     if (newGame.deck[i] == newGame.valCard) newGame.deck.splice(i, 1);
-     newGame.deck = newGame.deck;
-   };
- }
-
+ // Was using this to remove matches from array in order to check win status
+ // Figured out a better way that allowed for using non-numberic card values
  // function removeMatches(){
- //   console.log(newGame.deck);
- //   for (var i = newGame.deck.length; i--;){
- //      if (newGame.deck[i] === Number(newGame.valCard)) newGame.deck.splice(i, 1);
- //      newGame.deck = newGame.deck;
+ //   for (var i = game.deck.length; i--;){
+ //      if (game.deck[i] === Number(game.valCard)) game.deck.splice(i, 1);
+ //      game.deck = game.deck;
  //    };
- //    console.log(newGame.deck);
  //  }
 
 function coverCards(){
-  $(newGame.cardTarget).addClass('facedown');
-  $(newGame.prevCardTarget).addClass('facedown');
-  // e.click = e._click;
-  // e._click = null;
-
+  $(game.cardTarget).addClass('facedown');
+  $(game.prevCardTarget).addClass('facedown');
 }
 
-var changeCardState = function(e) {
-  event.preventDefault();
-  console.log('Change card start');
+var flipCards = function(e) {
+  e.preventDefault();
   let thisCard = e.currentTarget;
   let thisCardClass = e.currentTarget.className;
-  newGame.cardTarget = e.currentTarget;
+  game.cardTarget = e.currentTarget;
 
   if (thisCardClass.indexOf('facedown')){
     $(this).removeClass('facedown');
   };
-  newGame.valCard = e.currentTarget.innerHTML;
+  game.valCard = e.currentTarget.innerHTML;
   checkMatches();
 }
 
-// $('.card').one('click', changeCardState); //ONE allows for just one click of each card.  Does NOT reset.
-$('.card').on('click', changeCardState);
+// $('.card').one('click', flipCards); //ONE allows for just one click of each card.  Does NOT reset.
+$('.card').on('click', flipCards);
+$('.container').one('click', timer.startTimer);

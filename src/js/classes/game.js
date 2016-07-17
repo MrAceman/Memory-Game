@@ -11,7 +11,6 @@ class Game{
   }
 
   shuffleDeck() {
-    console.log(this.deck);
       let deck = this.deck;
       let i, randCard, x;
       for (i = deck.length; i; i--) {
@@ -20,7 +19,6 @@ class Game{
           deck[i - 1] = deck[randCard];
           deck[randCard] = x;
       }
-          console.log(this.deck);
       return(deck);
   }
 
@@ -38,19 +36,6 @@ class Game{
   setup(){
     let shuffledDeck = this.shuffleDeck();
     this.dealDeck(shuffledDeck);
-  }
-
-  // checkWin(){
-  //   if (this.deck.length > 0){
-  //     return;
-  //   }
-  //   else {
-  //     alert("YOU WIN!");
-  //   }
-  // }
-
-  startTimer(){
-    console.log('Hi timer!')
   }
 }
 

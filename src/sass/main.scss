@@ -5,7 +5,7 @@
 .boardContainer{
   margin:5px;
   padding:5px;
-  width:1000px;
+  width:1050px;
   // max-width: 1000px;
   display: -webkit-flex;
   display: flex;
@@ -29,8 +29,8 @@
 
   -webkit-justify-content: center;
   justify-content: center;
-  width:175px;
-  height:175px;
+  width:155px;
+  height:155px;
   max-width: 175px;
   border: 2px solid black;
   border-radius: 20px;
@@ -40,8 +40,6 @@
   padding:0;
 }
 
-
-
 .card.facedown {
   background-image: url(../images/TIYlogo.jpg);
   background-size: contain;
@@ -50,4 +48,26 @@
   img{
     display:none;
   }
+}
+
+.gameInfo{
+  padding-top:50px;
+}
+
+.score{
+  font-size:2em;
+  text-align: center;
+  padding-bottom:20px;
+}
+
+.guess{
+  font-size:2em;
+  text-align: center;
+  padding-bottom:20px;
+}
+
+.timer{
+  font-size:2em;
+  text-align: center;
+  padding-bottom:20px;
 }
