@@ -1,55 +1,22 @@
-# Installation
+## Weekend Project - Javascript Game / Memory Game Weekend Project
 
-#### Prerequisites
+This HTML, CSS, and JS was created during the weekend of July 14th through July 17th, 2016.  
 
-Make sure you have an up to date installation of `npm`
-with `brew update` followed by either `brew install npm` or `brew upgrade npm`.
+The goal of this project was to create a working Javascript game.
 
-Then use npm to install the following apps with `npm install -g $APP_NAME`
-* `gulp-cli`
-* `surge`
+The primary purposes of this exercise were to:
 
-Finally, I would strongly encourage you to install the `newapp` script from [here][newapp].
+1. Gain experience planning and developing a project using BDD (Behavior Driven Development).  
+For this project the Mocha testing framework was used with Chai BDD assertion library.
 
-[newapp]: https://gist.github.com/kingcons/a25733c233faf10847cbb4ff557e6843
+2. Gain experience with use of modules and creating prototypes using class based syntax.
 
-# Usage
+3. Continue improving coding skills with regards to breaking functionality into various independent functions.
 
-#### If you are using the `newapp` tool
+4. Continue improving skills in use of JS, HTML, CSS/SASS, and jQuery.
 
-*NOTE:* If you do not use a lowercased project/folder name, the automatic deploy to surge with `npm run deploy` will fail as surge.sh always expects lowercased names.
+This project has been deployed to Surge at: https://tiy-niclaswillems-memory.surge.sh
 
-1. Run `$ newapp template <project name>`
-2. Change in to your new project
-3. Initialize Git `$ git init`
-4. Build
+If you'd like to check out more of my work, please visit my GitHub page at https://github.com/MrAceman
 
-#### If you are NOT using the `newapp` tool
-
-1. Clone down this repo
-2. Rename and change into the project folder
-3. Remove `git` from it `$ rm -rf .git`
-4. Initialize Git `$ git init`
-5. Install the dependencies `$ npm install`
-6. Build 
-
-
-# Features
-
-This template features a couple different tools. First it utalizes both NPM and Gulp for different tasks.
-
-## Gulp Tasks
-
-All tasks are listed below, but ideally you will just need to run `gulp start` and be done with it.
-
-- `gulp start`: This is the primary task that will fire up the server and allow you to start building
-- `gulp server`: This will start a Browsersync server with live-reload
-- `gulp sass`: This will compile your SASS
-- `gulp browserify`: This will transpile your JS from ES6 to ES5
-- `gulp watch`: This will start a watcher for files
-
-## NPM Scripts
-
-- `npm run test`: This will launch Mocha in your terminal and run any tests
-- `npm run deploy`: This will deploy your application to Surge.sh for you
-- `npm run lint`: This will run ESLint on your `/src/js` folder
+If you have any questions please email me: [Niclas Willems](mailto:niclas.willems@gmail.com)
