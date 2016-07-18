@@ -1,81 +1,70 @@
-.container{
-  width:100vw;
+.container {
+    width: 100vw;
 }
-
-.boardContainer{
-  margin:0;
-  padding:0;
-  width:100vw;
-  // max-width: 1000px;
-  display: -webkit-flex;
-  display: flex;
+.boardContainer {
+    margin: 0;
+    padding: 0;
+    width: 1024px;
+    display: -webkit-flex;
+    display: flex;
 }
-
-.cardsList{
-  // margin:5px;
-  // padding:5px;
-  padding:0;
-  margin:0;
-  width:auto;
+.cardsList {
+    padding: 0;
+    margin: 0;
+    width: 850px;
 }
-
-.card{
-  list-style: none;
-
-  display: -webkit-inline-flex;
-  display: inline-flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-
-  -webkit-align-items: center;
-  align-items: center;
-
-  -webkit-justify-content: center;
-  justify-content: center;
-  width:160px;
-  height:160px;
-  max-width: 175px;
-  border: 2px solid black;
-  border-radius: 20px;
-  margin:5px;
-  text-align: center;
-  font-size:3em;
-  padding:0;
-  img{
-    // height:90%;
-    // width:90%;
-  }
+.card {
+    list-style: none;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 5px;
+    text-align: center;
+    font-size: 3em;
+    padding: 0;
 }
-
 .card.facedown {
-  background-image: url(../images/TIYlogo.jpg);
-  background-size: contain;
-  // background-color: #000000;
-  // font-size:0;
-  img{
-    display:none;
-  }
+    background-image: url("../images/TIYlogo.jpg");
+    background-size: contain;
+    img {
+        display: none;
+    }
+}
+.gameInfo {
+    padding-top: 50px;
+    padding-right: 70px;
+}
+.score {
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.guess {
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.timer {
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-.gameInfo{
-  padding-top:50px;
-  padding-right:10px;
-}
+.button {
+  margin-top:100px;
+  padding:5px;
+  font-size:1em;
 
-.score{
-  font-size:2em;
+  border:solid 1px black;
+  background-color: lightgrey;
   text-align: center;
-  padding-bottom:20px;
-}
-
-.guess{
-  font-size:2em;
-  text-align: center;
-  padding-bottom:20px;
-}
-
-.timer{
-  font-size:2em;
-  text-align: center;
-  padding-bottom:20px;
 }
