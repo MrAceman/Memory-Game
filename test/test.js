@@ -4,7 +4,6 @@ import chai from 'chai';
 // Import Any Files to Test
 
 import {Game} from '../src/js/classes/game.js';
-import {Card} from '../src/js/classes/card.js';
 import {Score} from '../src/js/classes/score.js';
 import {Timer} from '../src/js/classes/timer.js';
 import $ from 'jquery';
@@ -57,21 +56,6 @@ describe('Stuff about the score', function(){
           expect(score.currentScore).to.be.equal(0);
       });
   });
-})
-
-describe('Stuff about the card', function() {
-
-    let card;
-    beforeEach(function(){
-        card = new Card;
-    });
-
-    describe('Creation of a card', function() {
-
-        it('should be an instance of Card', function() {
-            expect(card).to.be.an.instanceof(Card);
-        });
-    });
 })
 
 describe('Info about the timer', function(){
