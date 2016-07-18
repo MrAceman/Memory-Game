@@ -2,7 +2,6 @@ import $ from 'jquery';
 import _ from 'lodash';
 
 // classes
-import {Card} from './classes/card.js';
 import {Game} from './classes/game.js';
 import {Score} from './classes/score.js';
 import {Timer} from './classes/timer.js';

@@ -3,17 +3,20 @@
 }
 
 .boardContainer{
-  margin:5px;
-  padding:5px;
-  width:1050px;
+  margin:0;
+  padding:0;
+  width:100vw;
   // max-width: 1000px;
   display: -webkit-flex;
   display: flex;
 }
 
 .cardsList{
-  margin:5px;
-  padding:5px;
+  // margin:5px;
+  // padding:5px;
+  padding:0;
+  margin:0;
+  width:auto;
 }
 
 .card{
@@ -38,6 +41,10 @@
   text-align: center;
   font-size:3em;
   padding:0;
+  img{
+    // height:90%;
+    // width:90%;
+  }
 }
 
 .card.facedown {
@@ -52,6 +59,7 @@
 
 .gameInfo{
   padding-top:50px;
+  padding-right:10px;
 }
 
 .score{

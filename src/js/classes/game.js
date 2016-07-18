@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import {Card} from './card.js';
 
 class Game{
   constructor(){
@@ -28,7 +27,7 @@ class Game{
       let d = shuffledDeck;
       for (i = d.length; i; i--) {
         // node.append(`<li class="card facedown" id="${i}">${d[i-1]}</li>`);
-        node.append(`<li class="card facedown" id="${i}"><img src="${this.deck[i-1]}" width=85%></li>`);
+        node.append(`<li class="card facedown" id="${i}"><img src="${this.deck[i-1]}"style='height: 90%; width: 90%; object-fit: contain'></li>`);
 
       }
     }
