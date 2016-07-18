@@ -36,6 +36,7 @@ function checkMatches(){
   else {
     game.valCard = 0;
     score.updateGuess();
+    $( ".card" ).unbind( "click" );
     setTimeout(coverCards, 1500);
   }
     game.previousCard = game.valCard;
@@ -53,7 +54,8 @@ function checkMatches(){
 function coverCards(){
   $(game.cardTarget).addClass('facedown');
   $(game.prevCardTarget).addClass('facedown');
-}
+  $( ".card" ).bind( "click", flipCards );
+  }
 
 var flipCards = function(e) {
   e.preventDefault();
@@ -61,9 +63,11 @@ var flipCards = function(e) {
   let thisCardClass = e.currentTarget.className;
   game.cardTarget = e.currentTarget;
 
-  if (thisCardClass.indexOf('facedown')){
+  if (thisCardClass.indexOf('facedown') > -1){
     $(this).removeClass('facedown');
-  };
+  } else {
+    return;
+  }
   game.valCard = e.currentTarget.innerHTML;
   checkMatches();
 }
